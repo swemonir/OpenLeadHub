@@ -12,7 +12,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center px-6 py-20 bg-gradient-to-b from-blue-50 to-white">
+    <div className="w-full min-h-screen flex items-center justify-center px-6 py-20 bg-linear-to-b from-blue-50 to-white">
       <div className="max-w-4xl text-center space-y-8">
         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
           Empowering startups with verified U.S. leads.
