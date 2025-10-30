@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   XIcon,
   LockIcon,
-  CheckCircleIcon,
   AlertCircleIcon,
   Loader2,
 } from "lucide-react";
@@ -13,7 +12,6 @@ import {
   Elements,
   useStripe,
   useElements,
-  ElementsConsumer,
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 
@@ -38,14 +36,12 @@ interface PaymentModalProps {
   currencySymbol?: string;
 }
 
-// Load Stripe (use your publishable key)
-const stripePromise = loadStripe("pk_test_51NrtkkG1p3nVEVTLlIhN9JauWDQ4WVtWQ7GTOSj5wjMyrQjjQ7NMU5KyiRYJ3HKn2xXRQU0D9RLyBbdU5LjkKmSb00fo9FLHfW");
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
 const CheckoutForm: React.FC<PaymentModalProps> = ({
   cart,
   total,
   onSuccess,
-  onClose,
   currencySymbol = "$",
 }) => {
   const stripe = useStripe();
@@ -229,7 +225,7 @@ const CheckoutForm: React.FC<PaymentModalProps> = ({
 };
 
 const PaymentModal: React.FC<PaymentModalProps> = (props) => {
-  const { isOpen, onClose, cart, total, onSuccess } = props;
+  const { isOpen, onClose, cart, total } = props;
 
   return (
     <AnimatePresence>
