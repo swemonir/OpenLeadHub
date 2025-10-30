@@ -41,11 +41,7 @@ const PackagesSection = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {packages.map((pkg) => (
-            <PackageCard
-              key={pkg.id}
-              pkg={pkg}
-              price={pkg.priceUSD}
-            />
+            <PackageCard key={pkg.id} pkg={pkg} price={pkg.priceUSD} />
           ))}
         </div>
         <div className="mt-16 text-center">

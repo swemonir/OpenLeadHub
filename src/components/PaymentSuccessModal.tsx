@@ -6,7 +6,13 @@ interface PaymentSuccessModalProps {
   isOpen: boolean;
   onClose: () => void;
   orderData: {
-    cart: { id: string; title: string; leadCount: string; quantity: number; price: number }[];
+    cart: {
+      id: string;
+      title: string;
+      leadCount: string;
+      quantity: number;
+      price: number;
+    }[];
     total: number;
     paymentId: string;
   };
@@ -50,12 +56,18 @@ export const PaymentSuccessModal: React.FC<PaymentSuccessModalProps> = ({
                     rotate: Math.random() * 360,
                     opacity: 0,
                   }}
-                  transition={{ duration: Math.random() * 2 + 2, ease: "linear" }}
+                  transition={{
+                    duration: Math.random() * 2 + 2,
+                    ease: "linear",
+                  }}
                   className="absolute w-2 h-2 rounded-full"
                   style={{
-                    backgroundColor: ["#22C55E", "#3B82F6", "#8B5CF6", "#F59E0B"][
-                      Math.floor(Math.random() * 4)
-                    ],
+                    backgroundColor: [
+                      "#22C55E",
+                      "#3B82F6",
+                      "#8B5CF6",
+                      "#F59E0B",
+                    ][Math.floor(Math.random() * 4)],
                   }}
                 />
               ))}
@@ -115,7 +127,9 @@ export const PaymentSuccessModal: React.FC<PaymentSuccessModalProps> = ({
 
             {/* Purchase Summary */}
             <div className="bg-gray-50 rounded-2xl p-6 mb-6">
-              <h3 className="font-semibold text-gray-900 mb-4">Purchase Summary</h3>
+              <h3 className="font-semibold text-gray-900 mb-4">
+                Purchase Summary
+              </h3>
               <div className="space-y-3">
                 {orderData.cart.map((item) => (
                   <div key={item.id} className="flex justify-between text-sm">
