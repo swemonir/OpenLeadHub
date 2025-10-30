@@ -44,7 +44,7 @@ const PackagesSection = () => {
             <PackageCard
               key={pkg.id}
               pkg={pkg}
-              price={convertPrice(pkg.priceUSD)}
+              price={pkg.priceUSD}
             />
           ))}
         </div>
@@ -65,7 +65,6 @@ const PackagesSection = () => {
           </div>
         </div>
       </div>
-      {/* <a href="https://buy.stripe.com/test_dRmbJ15U8eJN9OCczY1oI00">Pay Now</a> */}
     </div>
   );
 };
