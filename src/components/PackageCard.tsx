@@ -3,7 +3,7 @@ import { useState } from "react";
 import CheckoutModal from "./CheckoutModal";
 import PaymentModal from "./PaymentModal";
 import PaymentSuccessModal from "./PaymentSuccessModal";
-import { usePaymentStore } from "../store/Store.ts";
+import { usePaymentStore } from "../store/store";
 
 interface PackageCardProps {
   pkg: {
@@ -70,9 +70,8 @@ const PackageCard = ({ pkg, price }: PackageCardProps) => {
   return (
     <>
       <div
-        className={`${
-          categoryColors[pkg.category]
-        } border-2 rounded-xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1`}
+        className={`${categoryColors[pkg.category]
+          } border-2 rounded-xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1`}
       >
         <div className="flex items-start justify-between mb-4">
           <FolderIcon className="w-8 h-8 text-[#007AFF]" />
